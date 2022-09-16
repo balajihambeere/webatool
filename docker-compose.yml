@@ -1,0 +1,20 @@
+version: '3.3'
+
+services:
+  axedb:
+    build:
+      context: .
+      dockerfile: Dockerfile 
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_PASSWORD: password
+      MYSQL_USER: admin
+      MYSQL_DATABASE: axedb
+      MYSQL_ROOT_HOST: '%'
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - 3307:3306
+volumes:
+  db_data: {}
