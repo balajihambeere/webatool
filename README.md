@@ -1,21 +1,27 @@
 # Axe Board
-Axe Board is an accessibility testing application for websites and other HTML-based user interfaces. Designed using on Axe Core Engine.
+Axe Board is an accessibility testing application for websites and other HTML-based user interfaces. Designed using Axe Core Engine.
 
 https://www.npmjs.com/package/@axe-core/puppeteer
 
 # Prerequisite
 - Nodejs
 - MySQL
-- VsCode
+- Vscode
 
 # Environment Variables in .env file 
 Update env file with your local database credentials.
 
-## Local database
+**Local database**
+
+```
 LOCAL_DB_DATABASE=
+
 LOCAL_DB_USER=
+
 LOCAL_DB_PASSWORD=
+
 LOCAL_HOST=localhost
+```
 
 Install it and run:
 
