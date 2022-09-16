@@ -13,5 +13,5 @@ CREATE TABLE scans (
   -- Results from AxePuppeteer.
   results JSON NOT NULL,
 
-  PRIMARY KEY (ID)
+  PRIMARY KEY (id)
 );
