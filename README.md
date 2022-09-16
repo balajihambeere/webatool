@@ -23,15 +23,21 @@ Install it and run:
 npm install
 npm run dev
 ```
+## Video
+
+
+https://user-images.githubusercontent.com/22393576/190660499-7e5be049-4fd7-4a70-b30a-9e2e8fcbd8fe.mp4
+
 
 ## Scans Screen
-![Scans](./home-screen.png)
+![home-screen](https://user-images.githubusercontent.com/22393576/190660697-50d7252e-143e-4a32-ba7f-cb9252dc7b09.png)
 
 ## New Scan
-![New Scan](./new-scan.png)
+![new-scan](https://user-images.githubusercontent.com/22393576/190660783-e3e245b8-fab6-4590-9878-ef48a794c301.png)
 
 ## Scan Metrics
-![New Scan](./scan-info.png)
+![scan-info](https://user-images.githubusercontent.com/22393576/190660836-153fd26e-1c84-48b0-8018-6ee4930128e1.png)
 
 ## Scan Sections
-![New Scan](./scan-section.png)
+
+![scan-section](https://user-images.githubusercontent.com/22393576/190660886-28740b74-3d20-4ede-8583-8ae3ec906010.png)
