@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
 
 const useScans = (id?: number) => {
     const [loading, setLoading] = useState<boolean>(false);
@@ -42,9 +41,7 @@ const useScans = (id?: number) => {
                 }, body: JSON.stringify({ url: url })
             }).then(res => res.json()).then(result => {
                 setLoading(false);
-                setData({ id: result?.id })
-                console.log(result)
-                // router.push(`/scans/${result?.id}`)
+                setData({ id: result?.id });
             }).catch(err => setError(err?.message));
         }
         if (url) {

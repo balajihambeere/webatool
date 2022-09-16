@@ -32,9 +32,9 @@ const Section = (props: SectionProps) => {
         <Typography component="p" variant="h3">
           {items?.length}
         </Typography>
-        <Typography color="text.secondary" sx={{ flex: 1 }}>
+        {/* <Typography color="text.secondary" sx={{ flex: 1 }}>
           on 15 March, 2019
-        </Typography>
+        </Typography> */}
       </CardContent>
       <CardActions>
         <Button onClick={handleClick} size="small">View More</Button>
