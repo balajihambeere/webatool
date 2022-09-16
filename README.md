@@ -8,6 +8,15 @@ https://www.npmjs.com/package/@axe-core/puppeteer
 - MySQL
 - Vscode
 
+# Tech Stack
+- React
+- NextJS
+- Typescript
+- MySQL
+- Docker
+- axe-core/puppeteer
+- puppeteer
+
 # Environment Variables in .env file 
 Update env file with your local database credentials.
 
