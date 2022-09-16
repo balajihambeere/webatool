@@ -17,6 +17,12 @@ https://www.npmjs.com/package/@axe-core/puppeteer
 - axe-core/puppeteer
 - puppeteer
 
+# Clone Project
+```
+git clone https://github.com/balajihambeere/axe-board.git
+
+cd axe-board
+```
 # Environment Variables in .env file 
 Update env file with your local database credentials.
 
@@ -39,7 +45,6 @@ npm install
 npm run dev
 ```
 ## Video
-
 
 https://user-images.githubusercontent.com/22393576/190660499-7e5be049-4fd7-4a70-b30a-9e2e8fcbd8fe.mp4
 
