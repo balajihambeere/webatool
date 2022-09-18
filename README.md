@@ -51,3 +51,7 @@ npm run dev
 ## Video
 
 https://user-images.githubusercontent.com/22393576/190893737-023b6afc-a117-436d-bd57-960b211f2ef5.mp4
+
+
+## TODOs
+-
