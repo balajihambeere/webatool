@@ -2,7 +2,7 @@
 
 
 
-# Axe Board
+# Webatool
 Webatool is an Web Accessibility Tool for testing application for websites and other HTML-based user interfaces. Designed using on Axe Core Engine.
 
 https://www.npmjs.com/package/@axe-core/puppeteer
