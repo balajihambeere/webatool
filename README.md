@@ -1,5 +1,5 @@
 # Axe Board
-Axe Board is an accessibility testing application for websites and other HTML-based user interfaces. Designed using Axe Core Engine.
+Webatool is an Web Accessibility Tool for testing application for websites and other HTML-based user interfaces. Designed using on Axe Core Engine.
 
 https://www.npmjs.com/package/@axe-core/puppeteer
 
@@ -19,9 +19,9 @@ https://www.npmjs.com/package/@axe-core/puppeteer
 
 # Clone Project
 ```
-git clone https://github.com/balajihambeere/axe-board.git
+git clone https://github.com/balajihambeere/webatool.git
 
-cd axe-board
+cd webatool
 ```
 # Environment Variables in .env file 
 Update env file with your local database credentials.

@@ -102,7 +102,7 @@ const Layout = ({ children }: any) => {
                             noWrap
                             sx={{ flexGrow: 1 }}
                         >
-                            AXE BOARD
+                            WEBATOOL
                         </Typography>
                     </Toolbar>
                 </AppBar>

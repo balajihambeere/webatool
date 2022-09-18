@@ -947,31 +947,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-board@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "axe-board@workspace:."
-  dependencies:
-    "@axe-core/puppeteer": ^4.4.4
-    "@emotion/cache": latest
-    "@emotion/react": latest
-    "@emotion/server": latest
-    "@emotion/styled": latest
-    "@mui/icons-material": latest
-    "@mui/material": latest
-    "@types/node": latest
-    "@types/react": latest
-    eslint: latest
-    eslint-config-next: latest
-    mysql2: ^2.3.3
-    next: latest
-    puppeteer: ^17.1.3
-    react: latest
-    react-dom: latest
-    sequelize: ^6.21.6
-    typescript: latest
-  languageName: unknown
-  linkType: soft
-
 "axe-core@npm:^4.4.2, axe-core@npm:^4.4.3":
   version: 4.4.3
   resolution: "axe-core@npm:4.4.3"
@@ -2110,9 +2085,9 @@ __metadata:
   linkType: hard
 
 "inflection@npm:^1.13.2":
-  version: 1.13.2
-  resolution: "inflection@npm:1.13.2"
-  checksum: e7ad0559384ed7c526813404bde843f8f17941d47625ad60fc3b09e46efde873dd9840818007c6bd4dbe388e6248fa033d5a8c405c5fc62738c51b118a0e940f
+  version: 1.13.4
+  resolution: "inflection@npm:1.13.4"
+  checksum: 6744feede9998ad8abd2b1db4af79f494a166e656a0aa949d90c8f4a945c1d07038a3756bf7af78c8f6fce368ba213a7ebf35da3edeffd39f1da0ff465eed6eb
   languageName: node
   linkType: hard
 
@@ -3258,8 +3233,8 @@ __metadata:
   linkType: hard
 
 "sequelize@npm:^6.21.6":
-  version: 6.22.1
-  resolution: "sequelize@npm:6.22.1"
+  version: 6.23.0
+  resolution: "sequelize@npm:6.23.0"
   dependencies:
     "@types/debug": ^4.1.7
     "@types/validator": ^13.7.1
@@ -3296,7 +3271,7 @@ __metadata:
       optional: true
     tedious:
       optional: true
-  checksum: aa56de660ab84dcaec39364e36dcfda84f1dedd16ec461e06d79d74b5a0d8afa93afcd958620fc412606880a76e3b50a27dbd097b1fa106f333beb7c8ee7e630
+  checksum: bee85b96c5520284a7bca5b5ef296a8acbe43299003e95eee89a803b2841e36f56c39cf7826f3217e5a9206095b861b64e7981a6b7da0534decf278454eb9b71
   languageName: node
   linkType: hard
 
@@ -3701,6 +3676,31 @@ __metadata:
   checksum: 2b83283de1222ca549a7ef57f46e8d49c6669213348db78b7045bce36a3b5843ff1e9f709ebf74574e06223461ee1f264f8cc9a26a0060a79a27de079d8286ef
   languageName: node
   linkType: hard
+
+"webatool@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "webatool@workspace:."
+  dependencies:
+    "@axe-core/puppeteer": ^4.4.4
+    "@emotion/cache": latest
+    "@emotion/react": latest
+    "@emotion/server": latest
+    "@emotion/styled": latest
+    "@mui/icons-material": latest
+    "@mui/material": latest
+    "@types/node": latest
+    "@types/react": latest
+    eslint: latest
+    eslint-config-next: latest
+    mysql2: ^2.3.3
+    next: latest
+    puppeteer: ^17.1.3
+    react: latest
+    react-dom: latest
+    sequelize: ^6.21.6
+    typescript: latest
+  languageName: unknown
+  linkType: soft
 
 "webidl-conversions@npm:^3.0.0":
   version: 3.0.1

@@ -19,7 +19,7 @@ const NewScan: NextPage = () => {
     }
     return (
         <Layout maxWidth="xl">
-            <Typography variant='h4'>Enter your URL below to see how close you are to being compliant.</Typography>
+            <Typography variant='h4'>Check Accessibility of your web application here.</Typography>
             <TextField
                 id="url-text"
                 variant='outlined'
@@ -37,7 +37,6 @@ const NewScan: NextPage = () => {
                 <LinearProgress />
             </Box>)
             }
-
         </Layout>
     );
 };
