@@ -50,7 +50,9 @@ npm run dev
 ```
 ## Video
 
-https://user-images.githubusercontent.com/22393576/190893737-023b6afc-a117-436d-bd57-960b211f2ef5.mp4
+
+https://user-images.githubusercontent.com/22393576/190894383-9e915a9c-2e2c-4fdc-af40-b9c1a5b64719.mp4
+
 
 
 ## TODOs
