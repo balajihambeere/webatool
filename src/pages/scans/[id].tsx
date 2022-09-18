@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
@@ -14,8 +13,7 @@ import useScans from '../../features/scans/useScans';
 const ScanItem: NextPage = () => {
     const router = useRouter();
     const { id } = router.query
-
-    const { data, loading } = useScans(Number(id));
+    const { data } = useScans(Number(id));
     const { results } = data && data;
 
     return (<Layout>

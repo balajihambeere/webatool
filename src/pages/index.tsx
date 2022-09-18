@@ -8,16 +8,17 @@ import Box from '@mui/material/Box';
 import useScans from '../features/scans/useScans';
 
 const Home: NextPage = () => {
-  const { data, loading } = useScans()
+  const { data, loading } = useScans();
+
   return (
     <Layout maxWidth="xl">
-      {loading && data.length === 0 && (<Box>
+      {data?.length === 0 && (<Box>
         <Typography variant='h4'>Entries Not Found.</Typography>
         <Link href="/scans/new">
           <a>New Scan</a>
         </Link>
       </Box>)}
-      {data.length > 0 && !loading && (<Scans items={data} />)}
+      {data?.length > 0 && !loading && (<Scans items={data} />)}
     </Layout>
   );
 };
