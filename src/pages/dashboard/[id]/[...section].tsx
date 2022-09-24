@@ -5,9 +5,9 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import Layout from '../../../../features/dashboard/Layout';
-import { useAppContext } from '../../../../contextState';
-import Title from '../../../../components/Title';
+import Layout from '../../../features/dashboard/Layout';
+import { useAppContext } from '../../../contextState';
+import Title from '../../../components/Title';
 
 const ScanDetails: NextPage = () => {
     const { items } = useAppContext();

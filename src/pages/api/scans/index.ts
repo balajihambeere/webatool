@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ScanModel } from '../../../models';
+import { ScanHistoryModel, ScanModel } from '../../../models';
 import analyzeUrl from '../../../utils/analyzeUrl';
 import { HttpMethods } from '../../../utils/constants';
 
@@ -37,17 +37,28 @@ export default async function categoryHandler(req: NextApiRequest, res: NextApiR
                     res.json({ error: `Invalid URL: ${error?.message}` });
                     return;
                 }
-                const results = await analyzeUrl(url);
 
-                const rows: any = await ScanModel.create({
+                const scanRows: any = await ScanModel.create({
                     url: url,
-                    results: results
                 });
 
-                res.status(201).json({
-                    success: true,
-                    id: rows.id
+                if (scanRows.id) {
+                    const results = await analyzeUrl(url);
+                    const rows: any = await ScanHistoryModel.create({
+                        scanId: scanRows.id,
+                        results: results
+                    });
+                    res.status(201).json({
+                        success: true,
+                        id: rows.id
+                    });
+                    return;
+                }
+                res.status(404).json({
+                    success: false,
+                    error: 'Unable to create'
                 });
+
             } catch (error: any) {
                 res.status(404).json({
                     success: false,

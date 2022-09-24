@@ -34,24 +34,9 @@ const sequelize = new Sequelize(String(LOCAL_DB_DATABASE), String(LOCAL_DB_USER)
 });
 
 
-const isConnected = async () => {
-    try {
-        await sequelize.authenticate();
-        console.log('Connection has been established successfully.');
-    } catch (error) {
-        console.error('Unable to connect to the database:', error);
-    }
-};
-
-isConnected();
-
 export const ScanModel = sequelize.define('scans', {
     url: {
         type: DataTypes.TEXT,
-        allowNull: false
-    },
-    results: {
-        type: DataTypes.JSON,
         allowNull: false
     },
     createdDate: {
@@ -62,6 +47,34 @@ export const ScanModel = sequelize.define('scans', {
     timestamps: false
 });
 
+export const ScanHistoryModel = sequelize.define('scanhistories', {
+    results: {
+        type: DataTypes.JSON,
+        allowNull: false
+    },
+    createdDate: {
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW
+    }
+}, {
+    timestamps: false
+});
+
+// one to many relationship
+ScanModel.hasMany(ScanHistoryModel);
+
+ScanHistoryModel.belongsTo(ScanModel);
+
+const isConnected = async () => {
+    try {
+        await sequelize.authenticate();
+        console.log('Connection has been established successfully.');
+    } catch (error) {
+        console.error('Unable to connect to the database:', error);
+    }
+};
+
+isConnected();
 
 const synnScan = () => {
     sequelize.sync().then(() => {

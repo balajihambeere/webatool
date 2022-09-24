@@ -13,7 +13,7 @@ const DashBoard: NextPage = () => {
     <Layout maxWidth="xl">
       {data?.length === 0 && (<Box>
         <Typography variant='h4'>Entries Not Found.</Typography>
-        <Link href="/scans/new">
+        <Link href="/">
           <a>New Scan</a>
         </Link>
       </Box>)}
