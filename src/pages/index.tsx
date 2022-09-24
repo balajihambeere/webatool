@@ -42,7 +42,7 @@ function SelectModule() {
 const NewScan: NextPage = () => {
     const router = useRouter();
     const [url, setUrl] = useState<string>('');
-    const { data, loading, newScan } = useScans();
+    const { data, loading, newScan } = useScans(0);
 
     if (data?.id) {
         router.push(`/dashboard/scans/${data?.id}`)

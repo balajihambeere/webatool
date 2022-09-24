@@ -133,7 +133,7 @@ const Layout = ({ children }: any) => {
                 }}
             >
                 <Toolbar />
-                <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
+                <Container maxWidth="lg" sx={{ mt: 2, mb: 4 }}>
                     {children}
                 </Container>
             </Box>

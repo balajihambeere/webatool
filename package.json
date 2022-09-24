@@ -22,6 +22,7 @@
     "puppeteer": "^17.1.3",
     "react": "latest",
     "react-dom": "latest",
+    "recharts": "2.1.12",
     "sequelize": "^6.21.6"
   },
   "devDependencies": {
