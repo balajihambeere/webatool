@@ -7,7 +7,7 @@ import Box from '@mui/material/Box';
 import useScans from '../../../features/scans/useScans';
 
 const DashBoard: NextPage = () => {
-  const { data, loading } = useScans();
+  const { data, loading } = useScans(0);
 
   return (
     <Layout maxWidth="xl">

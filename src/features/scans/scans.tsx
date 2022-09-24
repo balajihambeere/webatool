@@ -37,6 +37,7 @@ const Scans = (props: ScansProps) => {
                   <TableRow>
                     <TableCell>Id</TableCell>
                     <TableCell>Url</TableCell>
+                    <TableCell>Date</TableCell>
                     <TableCell>Results</TableCell>
                   </TableRow>
                 </TableHead>
@@ -45,6 +46,7 @@ const Scans = (props: ScansProps) => {
                     <TableRow key={row.id}>
                       <TableCell>{row.id}</TableCell>
                       <TableCell>{row.url}</TableCell>
+                      <TableCell>{row.createdDate}</TableCell>
                       <TableCell>
                         <Link color="primary" href='' onClick={(e) => handleClick(e, row?.id)} sx={{ mt: 3 }}>
                           View Details

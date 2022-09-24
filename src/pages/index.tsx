@@ -44,8 +44,8 @@ const NewScan: NextPage = () => {
     const [url, setUrl] = useState<string>('');
     const { data, loading, newScan } = useScans();
 
-    if (data.id) {
-        router.push(`/scans/${data?.id}`)
+    if (data?.id) {
+        router.push(`/dashboard/scans/${data?.id}`)
     }
     return (
         <HomeLayout maxWidth="xl">

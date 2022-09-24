@@ -53,6 +53,10 @@ export const ScanModel = sequelize.define('scans', {
     results: {
         type: DataTypes.JSON,
         allowNull: false
+    },
+    createdDate: {
+        type: DataTypes.DATEONLY,
+        defaultValue: DataTypes.NOW
     }
 }, {
     timestamps: false

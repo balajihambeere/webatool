@@ -27,7 +27,7 @@ const useScans = (id?: number) => {
         };
         if (id) {
             fetchById();
-        } else {
+        } else if (id === 0) {
             fetchAllScan();
         }
     }, [id]);
