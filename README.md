@@ -55,6 +55,9 @@ npm run dev
 - Chart View
 - Rescan
 
+![v2](https://user-images.githubusercontent.com/22393576/192082951-0158db0b-0737-4974-bfc9-adcafa5ab5f4.png)
+
+
 ## Video Version 2.0.0
 
 
