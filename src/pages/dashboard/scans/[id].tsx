@@ -15,7 +15,6 @@ const ScanItem: NextPage = () => {
     const { id } = router.query
     const { data } = useScans(Number(id));
     const { results } = data && data;
-    console.log(router.query);
     return (<Layout>
         <Box>
             <Title>URL: {data?.url}</Title>

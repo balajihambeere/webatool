@@ -38,7 +38,6 @@ export default async function categoryHandler(req: NextApiRequest, res: NextApiR
                     return;
                 }
                 const results = await analyzeUrl(url);
-                console.log(results);
 
                 const rows: any = await ScanModel.create({
                     url: url,
