@@ -8,7 +8,6 @@ export default async function categoryHandler(req: NextApiRequest, res: NextApiR
         method,
     } = req
 
-    console.log(id);
 
     switch (method) {
         case HttpMethods[HttpMethods.GET]:
@@ -24,8 +23,6 @@ export default async function categoryHandler(req: NextApiRequest, res: NextApiR
                     data: result,
                 });
             } catch (error) {
-                console.log('result', error);
-
                 res.status(404).json({
                     success: false,
                 });
