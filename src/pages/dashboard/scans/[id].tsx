@@ -1,21 +1,21 @@
 import type { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Grid from '@mui/material/Grid';
-import Section from '../../features/scans/sections';
-import Layout from '../../features/dashboard/Layout';
+import Section from '../../../features/scans/sections';
+import Layout from '../../../features/dashboard/Layout';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import Title from '../../components/Title';
+import Title from '../../../components/Title';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import useScans from '../../features/scans/useScans';
+import useScans from '../../../features/scans/useScans';
 
 const ScanItem: NextPage = () => {
     const router = useRouter();
     const { id } = router.query
     const { data } = useScans(Number(id));
     const { results } = data && data;
-
+    console.log(router.query);
     return (<Layout>
         <Box>
             <Title>URL: {data?.url}</Title>

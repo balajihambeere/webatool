@@ -10,7 +10,7 @@ const MainListItems = (): React.ReactElement => {
   return (
     <List component="nav">
       <ListItem>
-        <ListItemButton component="a" href="/">
+        <ListItemButton component="a" href="/dashboard/scans">
           <ListItemIcon>
             <QrCodeScannerIcon />
           </ListItemIcon>
@@ -19,7 +19,7 @@ const MainListItems = (): React.ReactElement => {
       </ListItem>
 
       <ListItem>
-        <ListItemButton component="a" href="/scans/new">
+        <ListItemButton component="a" href="/">
           <ListItemIcon>
             <QrCodeScannerIcon />
           </ListItemIcon>

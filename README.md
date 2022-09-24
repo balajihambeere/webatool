@@ -48,6 +48,22 @@ Install it and run:
 npm install
 npm run dev
 ```
+## Release Version 2.0.0
+- Dark Mode
+- Module Wise Scan
+- Scan History
+- Chart View
+- Rescan
+
+## Video Version 2.0.0
+
+
+## Release Version 1.0.0
+- New Scan
+- Dashboard
+  - Scans List
+  - Scan Details
+
 ## Video
 
 

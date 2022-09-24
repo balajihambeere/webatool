@@ -22,7 +22,7 @@ const Scans = (props: ScansProps) => {
 
   const handleClick = (event: React.MouseEvent, id: any) => {
     event.preventDefault();
-    router.push(`/scans/${id}`)
+    router.push(`/dashboard/scans/${id}`)
   }
 
   return (
