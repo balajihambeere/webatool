@@ -61,7 +61,12 @@ npm run dev
 - Configured google Web Fonts
 
 
-## Video Version 2.0.0
+## Video Reference
+
+
+
+https://user-images.githubusercontent.com/22393576/193113981-6c83da55-b3ad-42cb-b5e3-33b64f289748.mp4
+
 
 
 ## Release Version 1.0.0
