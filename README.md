@@ -17,6 +17,7 @@ https://www.npmjs.com/package/@axe-core/puppeteer
 - NextJS
 - Typescript
 - TailwindCss
+- Recharts.js
 - MySQL
 - Docker
 - axe-core/puppeteer
@@ -49,16 +50,15 @@ Install it and run:
 npm install
 npm run dev
 ```
-## Release Version 2.0.0
-- Dark Mode
-- Module Wise Scan
-- Scan History
-- Chart View
-- Rescan
+![reports](https://user-images.githubusercontent.com/22393576/193112345-e6703314-b15d-4e13-8e59-beed0d4c0a3a.png)
 
-![v2](https://user-images.githubusercontent.com/22393576/192082951-0158db0b-0737-4974-bfc9-adcafa5ab5f4.png)
 
-![v3](https://user-images.githubusercontent.com/22393576/192096450-eec55bec-d6c5-4c79-bba7-d9f82e99762a.png)
+## Release Version 1.1.0
+- Replace MUI with TailwindCss
+- Added Visual Analytics Reports with Recharts
+- Configured e2e cypress
+- Configured Jest and ReactTesting library
+- Configured google Web Fonts
 
 
 ## Video Version 2.0.0
@@ -70,12 +70,6 @@ npm run dev
   - Scans List
   - Scan Details
 
-## Video
-
+## Video Reference
 
 https://user-images.githubusercontent.com/22393576/190894383-9e915a9c-2e2c-4fdc-af40-b9c1a5b64719.mp4
-
-
-
-## TODOs
--
