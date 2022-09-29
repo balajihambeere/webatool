@@ -16,6 +16,7 @@ https://www.npmjs.com/package/@axe-core/puppeteer
 - React
 - NextJS
 - Typescript
+- TailwindCss
 - MySQL
 - Docker
 - axe-core/puppeteer
