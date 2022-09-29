@@ -8,7 +8,6 @@ export default async function categoryHandler(req: NextApiRequest, res: NextApiR
         method,
     } = req
 
-
     switch (method) {
         case HttpMethods[HttpMethods.GET]:
             try {

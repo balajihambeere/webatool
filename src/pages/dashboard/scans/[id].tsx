@@ -1,105 +1,159 @@
-import type { NextPage } from 'next';
-import dynamic from 'next/dynamic';
-import { useRouter } from 'next/router';
-import Grid from '@mui/material/Grid';
-import Section from '../../../features/scans/sections';
-import Layout from '../../../features/dashboard/Layout';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import Title from '../../../components/Title';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import useScans from '../../../features/scans/useScans';
-// import ScanChart from '../../../features/chart/ScanChart';
+import { NextPageWithLayout } from "@/pages/_app";
+import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+import { ReactElement } from "react";
+import { useAppContext } from "src/contextState";
+import DashboardLayout from "src/features/dashboard/views/Layout";
+import useScans from "src/features/scans/useScans";
 
-
-const ScanChart = dynamic(() => import('../../../features/chart/ScanChart'), {
+const ChartBar = dynamic(() => import('../../../features/scans/Chart'), {
     ssr: false,
 });
 
-const ScanItem: NextPage = () => {
+const HealtChart = dynamic(() => import('../../../features/scans/HealthChart'), {
+    ssr: false,
+});
+const ScanResultPage: NextPageWithLayout = () => {
+
     const router = useRouter();
     const { id } = router.query
     const { data } = useScans(Number(id));
     const { scanhistories } = data || {};
+
     const details = scanhistories?.length > 0 ? scanhistories[0] : [];
+
     const charData = [
-        { name: "Passes", value: details?.results?.passes?.length },
-        { name: "Inapplicable", value: details?.results?.inapplicable?.length },
-        { name: "Incomplete", value: details?.results?.incomplete?.length },
-        { name: "Violations", value: details?.results?.violations?.length }
+        { name: "passes", result: details?.results?.passes?.length },
+        { name: "inapplicable", result: details?.results?.inapplicable?.length },
+        { name: "incomplete", result: details?.results?.incomplete?.length },
+        { name: "violations", result: details?.results?.violations?.length }
     ];
 
-    return (<Layout>
-        <Box>
-            {
-                data ? (<Box sx={{ width: 1 }}>
-                    <Title>URL: {data?.url}</Title>
-                    <Typography component="p" variant="h4" mt={2}>
-                        Metrics
-                    </Typography>
-                    <ScanChart data={charData} />
+    const { addItem, removeItem, } = useAppContext();
 
-                    <Grid container spacing={2} mt={2}>
-                        <Grid item xs={3}>
-                            <Section name='Passes' items={details?.results?.passes} />
-                        </Grid>
-                        <Grid item xs={3}>
-                            <Section name='Inapplicable' items={details?.results?.inapplicable} />
-                        </Grid>
-                        <Grid item xs={3}>
-                            <Section name='Incomplete' items={details?.results?.incomplete} />
-                        </Grid>
-                        <Grid item xs={3}>
-                            <Section name='Violations' items={details?.results?.violations} />
-                        </Grid>
-                    </Grid>
-                    <Grid container spacing={2} mt={1}>
-                        <Grid item xs={6}>
-                            <Card sx={{ height: 120 }}>
-                                <CardContent>
-                                    <Title>Test Engine </Title>
-                                    <Typography color="text.secondary" sx={{ flex: 1 }}>
-                                        <strong>Name : </strong>   {details?.results?.testEngine?.name}
-                                    </Typography>
+    const handleClick = (e: React.MouseEvent<SVGElement>, name: string) => {
+        e.preventDefault();
+        removeItem();
+        switch (name) {
+            case "passes":
+                addItem(details?.results?.passes);
+                break;
+            case "inapplicable":
+                addItem(details?.results?.inapplicable);
+                break;
+            case "incomplete":
+                addItem(details?.results?.incomplete);
+                break;
+            case "violations":
+                addItem(details?.results?.violations);
+                break;
+            default:
+                addItem([]);
+        }
+        router.push(`${id}/${name?.toLowerCase()}`)
 
-                                    <Typography color="text.secondary" sx={{ flex: 1 }}>
-                                        <strong>Version : </strong>   {details?.results?.testEngine?.version}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Card sx={{ minWidth: 275, height: 120 }}>
-                                <CardContent>
-                                    <Title>Test Runner </Title>
-                                    <Typography color="text.secondary" sx={{ flex: 1 }}>
-                                        <strong>Name : </strong>   {details?.results?.testRunner?.name}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
-                    <Grid container spacing={2} mt={1}>
-                        <Grid item xs={12}>
-                            <Card sx={{ minWidth: 275 }}>
-                                <CardContent>
-                                    <Title>Test Environment </Title>
-                                    <Typography color="text.secondary" sx={{ flex: 1 }}>
-                                        <strong>UserAgent : </strong>   {details?.results?.testEnvironment?.userAgent}
-                                    </Typography>
+    }
 
-                                    <Typography color="text.secondary" sx={{ flex: 1 }}>
-                                        <strong>Orientation Type : </strong>   {details?.results?.testEnvironment?.orientationType}
-                                    </Typography>
-                                </CardContent>
-                            </Card>
-                        </Grid>
-                    </Grid>
-                </Box>) : <>Records Not found</>
-            }
-        </Box>
+    const handleViewDetailsClick = (e: React.MouseEvent<HTMLButtonElement>, name: string) => {
+        e.preventDefault();
+        removeItem();
+        switch (name) {
+            case "passes":
+                addItem(details?.results?.passes);
+                break;
+            case "inapplicable":
+                addItem(details?.results?.inapplicable);
+                break;
+            case "incomplete":
+                addItem(details?.results?.incomplete);
+                break;
+            case "violations":
+                addItem(details?.results?.violations);
+                break;
+            default:
+                addItem([]);
+        }
+        router.push(`${id}/${name?.toLowerCase()}`)
 
-    </Layout>)
+    }
+    return (<>
+        <h1 className="text-3xl mt-5 ml-5">Reports </h1>
+        <div className="flex flex-row mt-5">
+            <div className="flex basis-1/2 ml-5">
+                <div className="grid grid-cols-2 gap-8">
+                    <div className="h-44 w-60 bg-green-400 shadow rounded-lg">
+                        <div className="flex flex-col p-5">
+                            <div className="text-xl">Passes</div>
+                            <div className="text-6xl text-center">{details?.results?.passes?.length}</div>
+                            <div className="underline text-right mt-5">
+                                <button className="underline"
+                                    onClick={(e) => handleViewDetailsClick(e, 'passes')}>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="h-44 w-60 bg-sky-400 shadow rounded-lg">
+                        <div className="flex flex-col p-5">
+                            <div className="text-xl">Inapplicable</div>
+                            <div className="text-6xl text-center">{details?.results?.inapplicable?.length}</div>
+                            <div className="underline text-right mt-5">
+                                <button className="underline"
+                                    onClick={(e) => handleViewDetailsClick(e, 'inapplicable')}>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="h-44 w-60 bg-orange-400 shadow rounded-lg">
+                        <div className="flex flex-col p-5">
+                            <div className="text-xl">Incomplete</div>
+                            <div className="text-6xl text-center">{details?.results?.incomplete?.length}</div>
+                            <div className="underline text-right mt-5">
+                                <button className="underline"
+                                    onClick={(e) => handleViewDetailsClick(e, 'incomplete')}>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="h-44 w-60 bg-red-500 shadow rounded-lg">
+                        <div className="flex flex-col p-5">
+                            <div className="text-xl">Violations</div>
+                            <div className="text-6xl text-center">{details?.results?.violations?.length}</div>
+                            <div className="underline text-right mt-5">
+                                <button className="underline"
+                                    onClick={(e) => handleViewDetailsClick(e, 'violations')}>View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* <ul className="list-none">
+                    <div className="text-xl font-bold">Test Environment</div>
+                    <li className="flex flex-row mt-2 border">
+                        <div className="flex basis-1/2">
+                            <strong>UserAgent : </strong>
+                        </div>
+                        <div className="flex basis-1/2 ">
+                            {details?.results?.testEnvironment?.userAgent}
+                        </div>
+                    </li>
+                </ul> */}
+                {/* <HealtChart data={charData} /> */}
+            </div>
+            <div className="flex flex-col basis-1/2 text-center">
+                <ChartBar data={charData} onCellClick={handleClick} />
+                <h1 className="text-3xl mt-5">Health Score </h1>
+            </div>
+        </div>
+
+    </>)
+};
+
+ScanResultPage.getLayout = function getLayout(page: ReactElement) {
+    return (<DashboardLayout>
+        {page}
+    </DashboardLayout>
+    );
 }
-export default ScanItem;
+
+export default ScanResultPage;

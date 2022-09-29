@@ -1,80 +1,12 @@
-![logo](https://user-images.githubusercontent.com/22393576/190894277-ddc94895-d8ab-4fc4-8dc8-4636710df4a9.png)
+## Getting Started
 
+First, run the development server:
 
-
-# Webatool
-Webatool is an Web Accessibility Tool for testing application for websites and other HTML-based user interfaces. Designed using on Axe Core Engine.
-
-https://www.npmjs.com/package/@axe-core/puppeteer
-
-# Prerequisite
-- Nodejs
-- MySQL
-- Vscode
-
-# Tech Stack
-- React
-- NextJS
-- Typescript
-- MySQL
-- Docker
-- axe-core/puppeteer
-- puppeteer
-
-# Clone Project
-```
-git clone https://github.com/balajihambeere/webatool.git
-
-cd webatool
-```
-# Environment Variables in .env file 
-Update env file with your local database credentials.
-
-**Local database**
-
-```
-LOCAL_DB_DATABASE=
-
-LOCAL_DB_USER=
-
-LOCAL_DB_PASSWORD=
-
-LOCAL_HOST=localhost
-```
-
-Install it and run:
-
-```sh
-npm install
+```bash
 npm run dev
+# or
+yarn dev
 ```
-## Release Version 2.0.0
-- Dark Mode
-- Module Wise Scan
-- Scan History
-- Chart View
-- Rescan
 
-![v2](https://user-images.githubusercontent.com/22393576/192082951-0158db0b-0737-4974-bfc9-adcafa5ab5f4.png)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-![v3](https://user-images.githubusercontent.com/22393576/192096450-eec55bec-d6c5-4c79-bba7-d9f82e99762a.png)
-
-
-## Video Version 2.0.0
-
-
-## Release Version 1.0.0
-- New Scan
-- Dashboard
-  - Scans List
-  - Scan Details
-
-## Video
-
-
-https://user-images.githubusercontent.com/22393576/190894383-9e915a9c-2e2c-4fdc-af40-b9c1a5b64719.mp4
-
-
-
-## TODOs
--
