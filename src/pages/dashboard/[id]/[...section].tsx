@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import { ReactElement } from "react";
 import { useAppContext } from "src/contextState";
 import DashboardLayout from "src/features/dashboard/views/Layout";
+import { capitalizeFirstLetter } from "src/utils/Helper";
 
 const styles = {
     details: 'open:bg-white dark:open:bg-slate-900 open:ring-1 open:ring-black/5 dark:open:ring-white/10 shadow-lg p-6 rounded-lg',
@@ -15,7 +16,7 @@ const ScanDetailsPage: NextPageWithLayout = () => {
     const { section } = router.query;
 
     return (<div className="px-5 py-5">
-        {section && <div className="text-xl font-bold">{String(section[1])?.charAt(0).toUpperCase() + String(section[1]).slice(1)}</div>}
+        {section && <div className="text-xl font-bold">{capitalizeFirstLetter(String(section[1]))}</div>}
 
         {items && items[0]?.map((item: any) => {
             return (<div key={item} className="w-full mx-auto p-2">

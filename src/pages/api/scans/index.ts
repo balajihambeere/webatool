@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { ScanHistoryModel, ScanModel } from '../../../models';
-import analyzeUrl from '../../../utils/analyzeUrl';
+import analyzeUrl from '../../../utils/AnalyzeUrl';
 import { HttpMethods } from '../../../utils/constants';
 
 export default async function categoryHandler(req: NextApiRequest, res: NextApiResponse): Promise<void> {
