@@ -4,17 +4,14 @@ import { useRouter } from "next/router";
 import { ReactElement } from "react";
 import { useAppContext } from "src/contextState";
 import DashboardLayout from "src/features/dashboard/views/Layout";
-import useScans from "src/features/scans/useScans";
+import useScans from "src/features/scans/views/useScans";
 
-const ChartBar = dynamic(() => import('../../../features/scans/Chart'), {
+const ChartBar = dynamic(() => import('../../../features/scans/views/Chart'), {
     ssr: false,
 });
 
-const HealtChart = dynamic(() => import('../../../features/scans/HealthChart'), {
-    ssr: false,
-});
+
 const ScanResultPage: NextPageWithLayout = () => {
-
     const router = useRouter();
     const { id } = router.query
     const { data } = useScans(Number(id));
@@ -31,8 +28,7 @@ const ScanResultPage: NextPageWithLayout = () => {
 
     const { addItem, removeItem, } = useAppContext();
 
-    const handleClick = (e: React.MouseEvent<SVGElement>, name: string) => {
-        e.preventDefault();
+    const handleAddItem = (name: string) => {
         removeItem();
         switch (name) {
             case "passes":
@@ -51,31 +47,19 @@ const ScanResultPage: NextPageWithLayout = () => {
                 addItem([]);
         }
         router.push(`${id}/${name?.toLowerCase()}`)
+    };
 
-    }
+    const handleClick = (e: React.MouseEvent<SVGElement>, name: string) => {
+        e.preventDefault();
+
+        handleAddItem(name);
+    };
 
     const handleViewDetailsClick = (e: React.MouseEvent<HTMLButtonElement>, name: string) => {
         e.preventDefault();
-        removeItem();
-        switch (name) {
-            case "passes":
-                addItem(details?.results?.passes);
-                break;
-            case "inapplicable":
-                addItem(details?.results?.inapplicable);
-                break;
-            case "incomplete":
-                addItem(details?.results?.incomplete);
-                break;
-            case "violations":
-                addItem(details?.results?.violations);
-                break;
-            default:
-                addItem([]);
-        }
-        router.push(`${id}/${name?.toLowerCase()}`)
+        handleAddItem(name);
+    };
 
-    }
     return (<>
         <h1 className="text-3xl mt-5 ml-5">Reports </h1>
         <div className="flex flex-row mt-5">
@@ -126,19 +110,6 @@ const ScanResultPage: NextPageWithLayout = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* <ul className="list-none">
-                    <div className="text-xl font-bold">Test Environment</div>
-                    <li className="flex flex-row mt-2 border">
-                        <div className="flex basis-1/2">
-                            <strong>UserAgent : </strong>
-                        </div>
-                        <div className="flex basis-1/2 ">
-                            {details?.results?.testEnvironment?.userAgent}
-                        </div>
-                    </li>
-                </ul> */}
-                {/* <HealtChart data={charData} /> */}
             </div>
             <div className="flex flex-col basis-1/2 text-center">
                 <ChartBar data={charData} onCellClick={handleClick} />

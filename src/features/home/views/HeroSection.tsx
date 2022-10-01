@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import ProgressBar from "src/components/ProgressBar";
-import useScans from "src/features/scans/useScans";
+import useScans from "src/features/scans/views/useScans";
 
 const styles = {
     container: "relative container mt-20 mx-auto px-20",
@@ -12,14 +12,15 @@ const styles = {
     formButton: "flex w-24 font-medium text-base px-8 ml-3 rounded py-3 bg-indigo-100 bg-violet-500 text-white"
 };
 
-const Hero = () => {
+const HeroSection = () => {
     const router = useRouter();
     const [url, setUrl] = useState<string>('');
     const { data, loading, newScan } = useScans();
 
     if (data?.id) {
         router.push(`/dashboard/scans/${data?.id}`)
-    }
+    };
+
     return (<div className={styles.container}>
         <div className="text-center">
             <h1 className={styles.heading}>
@@ -41,5 +42,6 @@ const Hero = () => {
             {loading && (<ProgressBar />)}
         </div>
     </div>);
-}
-export default Hero;
+};
+
+export default HeroSection;
