@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import { MenuItemType } from "../types/MenuItem";
 
 const styles = {
     container: "relative container flex flex-row  justify-start items-center mx-auto py-5",
@@ -8,11 +9,10 @@ const styles = {
 }
 
 const MenuItems = [
-    // { id: 0, path: "/", name: "Home" },
-    { id: 1, path: "/dashboard", name: "Dashboard" },
-    { id: 2, path: "/documentation", name: "Documentation" },
-    { id: 3, path: "/login", name: "Log In" }
-];
+    { path: "/dashboard", name: "Dashboard" } as MenuItemType,
+    { path: "/documentation", name: "Documentation" } as MenuItemType,
+    { path: "/login", name: "Log In" } as MenuItemType
+] as Array<MenuItemType>;
 
 const NavBar = (): React.ReactElement => {
     return (
@@ -20,8 +20,8 @@ const NavBar = (): React.ReactElement => {
             <Link href="/">
                 <a className={styles.brand}>WEBATOOL</a>
             </Link>
-            {MenuItems.map(item => {
-                return (<Link key={item.id} href={item.path} >
+            {MenuItems.map((item: MenuItemType, index: number) => {
+                return (<Link key={`menu-${index}`} href={item.path} >
                     <a className={styles.menuItem}>{item.name}</a>
                 </Link>)
             })}
