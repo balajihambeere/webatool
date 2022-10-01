@@ -37,7 +37,7 @@ const ChartBar = (props: ChartBarProps) => {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="result" fill="#8884d8">
+                <Bar dataKey="score" fill="#8884d8">
                     {data.map((entry: any, index: number) => (
                         <Cell onClick={(e) => onCellClick(e, entry?.name)} key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                     ))}

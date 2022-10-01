@@ -2,7 +2,7 @@ import { NextPageWithLayout } from "@/pages/_app";
 import Link from "next/link";
 import React, { ReactElement } from "react";
 import DashboardLayout from "src/features/dashboard/views/Layout";
-import useScans from "src/features/scans/useScans";
+import useScans from "src/features/scans/views/useScans";
 
 const styles = {
     table: "table-auto mt-5 ml-5 border-collapse border border-purple-400",
